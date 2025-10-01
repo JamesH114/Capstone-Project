@@ -50,6 +50,7 @@ TASK 2: Visualize the relationship between Payload Mass and Launch Site
 # Plot a scatter point chart with x axis to be Pay Load Mass (kg) and y axis to be the launch site, and hue to be the class value
 ax = sns.catplot(x="PayloadMass", y="LaunchSite", data=df, hue="Class")
 ax.set(xlabel='Payload Mass (kg)', ylabel='LaunchSite')
+plt.xticks(np.arange(0, 20000, 2500));
 plt.title('Variation of Landing Outcomes with Payload Mass');
 
 Now if you observe Payload Mass Vs. Launch Site scatter point chart you will find for the VAFB-SLC launchsite there are no rockets launched for heavypayload mass(greater than 10000).
@@ -115,7 +116,8 @@ Success
 
 # Generate the required line plot
 ax = sns.lineplot(y = Success, x = Success.index)
-ax.set(xlabel='Year', ylabel='Success');
+ax.set(xlabel='Year', ylabel='Success Rate');
+plt.yticks(np.arange(0, 1.2, 0.2));
 plt.title('Variation of Landing Outcomes with Type of Orbit');
 
 you can observe that the sucess rate since 2013 kept increasing till 2020
